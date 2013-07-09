@@ -1,0 +1,19 @@
+<h1><%= _('Search results for:')%> <%= h(params[:q]) %></h1>
+
+<% @articles.each do |article| %>
+<div class='article' id="article-<%= article.id %>">
+  <h2><%= link_to_permalink(article,article.title) %></h2>
+  <p><%= article.body.strip_html.slice(0, 300) %> [...]</p>
+  <div class='meta'>
+    <p>
+    <%= "#{_("Published on")} #{article.published_at.strftime('%d')} #{_(article.published_at.strftime('%B'))} #{article.published_at.strftime('%Y')}" %>
+    <small class='pull-right'><%= display_comments_counter(article) %></small>
+    </p>
+  </div>
+</div>
+
+<% end %>
+
+<div id='paginate'>
+<%= paginate @articles, { :previous_label => 'Précédent', :next_label => 'Suivant'  } %>
+</div>

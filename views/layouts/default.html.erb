@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>Easy Mobile Solutions / Блог</title>
+  <%= stylesheet_link_tag "/stylesheets/theme/bootstrap.css", "/stylesheets/theme/gravity.css", :media => 'all' %>
+  <%= page_header %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic" type="text/css"/>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" type="text/css"/>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+	  <div id="nav" class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+		<a href="http://www.emsolutions.ru/" class="brand"><img src="/images/logo.png" class="logo" /> Easy Mobile Solutions</a>
+	      <div class="nav-collapse">
+	        <ul class="nav pull-right">
+	          <li><a href="http://www.emsolutions.ru/"><i class="icon-info-sign icon-large"></i> Специализация</a></li>
+			  <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th icon-large"></i> Портфолио <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="http://www.emsolutions.ru/cafeprototype.html">Приложение для кафе и ресторанов</a></li>
+				</ul>
+			  </li>
+		  <li ><a href="http://www.emsolutions.ru/contacts.html"><i class="icon-envelope icon-large"></i> Контакты</a></li>
+          <li class="active"><a href="http://blog.emsolutions.ru/"><i class="icon-bullhorn icon-large icon-white"></i> Блог</a></li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+    <div class="stripe">
+	<div class="container">
+	    <div class="search pull-right">
+		<form action='/search/?q=' method='get' id='sform' class='form-search'>
+		    <input type="text" id="q" name="q" value="" size="15" class='search-query' />
+		    <input type='submit' value='<%= _("Search") %>' class='btn btn-small' />
+		</form>
+	    </div>
+	    <div class='row'>
+		<div class='span12'>
+		    <%= yield %>
+	        </div>
+	    </div>
+	</div>
+    </div>
+<footer>
+<div id="footer" class="navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="container">
+	      	<div class="nav-collapse">
+	        	<ul class="nav">
+	          		<li><a href="http://twitter.com/E_M_Solutions" target="_blank"><img src="/images/twitter.png" /></a></li>
+	          		<li><a href="http://www.facebook.com/EasyMobileSolutions" target="_blank"><img src="/images/facebook.png" /></a></li>
+	          		<li><a href="http://plus.google.com/u/0/b/115836863813598747613/" target="_blank"><img src="/images/google.png" /></a></li>
+			</ul>
+	     	</div>
+			<p class="pull-right footer">&copy; <a href="mailto:info@emsolutions.ru">Компания «Easy Mobile Solutions»</a>, 2012. Все права защищены.</p>
+		</div>
+	</div>
+</div>
+</footer>
+<%= javascript_include_tag "/javascripts/jquery/jquery.js", "/javascripts/bootstrap/bootstrap-dropdown.js" %>
+</body>
+</html>

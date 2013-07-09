@@ -1,0 +1,5 @@
+<% if @article.published_comments.any? -%>
+    <div class='article'>
+        <%= render @article.published_comments %>
+    </div>
+<% end -%>
